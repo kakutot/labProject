@@ -1,0 +1,8 @@
+@media (min-width: 768px) {
+#img {
+        width:100%;
+    }
+}
+body {
+    min-height: 70px;
+}
