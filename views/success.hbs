@@ -18,10 +18,9 @@
     <link href="stylesheets\index.css" rel="stylesheet">
     <link href="stylesheets\reserv.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <title>Blog Template for Bootstrap</title>
 </head>
-
 <body>
-<!-- Static navbar -->
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
         <div class="navbar-header">
@@ -52,71 +51,42 @@
             <li role="presentation" style="padding:4px 7px;">
                 <a href="/yachts" style="padding-bottom: 8px">YACHTS</a></li>
             <li role="presentation" class="active" style="padding:4px 7px;">
-                <a href="#" style="padding-bottom: 8px">RESERVATIONS</a></li>
+                <a href="/reservations" style="padding-bottom: 8px">RESERVATIONS</a></li>
             <li role="presentation" style="padding:4px 7px;">
                 <a href="/blog" style="padding-bottom: 8px">BLOG</a></li>
         </ul>
     </nav>
-
 </div>
-</body>
-<div class="jumbotron" style="border-bottom: 1px solid darkgrey;border-top: 1px solid darkgrey;height:150px">
-    <section>
-        <div class="container">
-            <div>
-                <div class="col-lg-12">
-                        <img class="img-responsive thumbnail" src="images/sungl.jpg"
-                             style="width: 600px;margin-left:300px;margin-top:-30px"  >
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-
 <div class="row">
     <div class="center-block" style="width:400px;">
-        <form action="/reservations" method ="post">
-            <div class="form-group">
-                <label for="user FName">Your first name</label>
-                <input type="text" class="form-control" name="userFName"  aria-describedby="emailHelp" placeholder="Enter first name">
-            </div>
-            <div class="form-group">
-                <label for="user LName">Your last name</label>
-                <input type="text" class="form-control" name="userLName" aria-describedby="emailHelp" placeholder="Enter first name">
-            </div>
-            <div class="form-group">
-                <label for="yacht">Enter yacht#</label>
-                <input type="number" class="form-control" name="yacht" min ="1" max ="{{data}}">
-            </div>
-            <div class="form-group">
-                <label for="date">Choose date</label>
-                <input type="date" class="form-control" name="res_date"  id="datePicker">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-            <script>
-                ( function changeDay() {
-                    var today = new Date();
-                    var dd = today.getDate();
-                    var mm = today.getMonth()+1; //January is 0!
-                    var yyyy = today.getFullYear();
-                    if(dd<10){
-                        dd='0'+dd
-                    }
-                    if(mm<10){
-                        mm='0'+mm
-                    }
-                    today = yyyy+'-'+mm+'-'+dd;
-                    document.getElementById("datePicker").setAttribute("min", today);
-                })()
-            </script>
+        <h2 style="color: #2aabd2">Order Info</h2>
+        <div class="form-group">
+            <label for="user FName">Your first name</label>
+            <input type="text" class="form-control" name="userFName"  placeholder="{{data.userFName}}"disabled>
+        </div>
+        <div class="form-group">
+            <label for="user LName">Your last name</label>
+            <input type="text" class="form-control" name="userFName"  placeholder="{{data.userLName}}"disabled>
+        </div>
+        <div class="form-group">
+            <label for="user FName">Yacht#</label>
+            <input type="text" class="form-control" name="userFName"  placeholder="{{data.yacht}}"disabled>
+        </div>
+        <div class="form-group">
+            <label for="user FName">Date</label>
+            <input type="text" class="form-control" name="userFName"  placeholder="{{data.res_date}}"disabled>
+        </div>
     </div>
 </div>
-
-
 <hr>
 <footer >
     <div class="text-center">
         <p>&copy; 2018 Tupkalenko R.</p>
     </div>
 </footer>
+</body>
+</html>
+
+
+
+
