@@ -18,88 +18,91 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     </head>
     <body>
-    <!-- Static navbar -->
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" style="color:#1b6d85">BoatVentures(Tupkalenko)</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><p class="navbar-text" style="font-size:10pt">800-555-5555</p></li>
-                    <li><a href="https://www.facebook.com/pages/BoatVentures/492032200952350" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=kakutot27@gmail.com" target="_blank"><i class="fa fa-google"></i> </a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
-    </nav>
-    <!--Another navbar-->
-    <div class="container">
-        <nav>
-            <ul class="nav nav-pills pull-left">
-                <li role="presentation" style="padding:4px 7px;">
-                    <a href="/" style="padding-bottom: 8px">HOME</a></li>
-                <li class="active" role="presentation" style="padding:4px 7px;">
-                    <a href="#" style="padding-bottom: 8px">YACHTS</a></li>
-                <li role="presentation" style="padding:4px 7px;">
-                    <a href="/reservations" style="padding-bottom: 8px">RESERVATIONS</a></li>
-                <li  role="presentation" style="padding:4px 7px;">
-                    <a href="/blog" style="padding-bottom: 8px">BLOG</a></li>
-            </ul>
-        </nav>
-    </div>
     <section>
         <div class="centralColumn">
         </div>
     </section>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4" style="margin-top:40px">
-                <h3 style="color:#1b6d85">Quiet time</h3>
-                <img class="img-responsive thumbnail" src="images/boat2.jpg" width="300px" height="400px">
-            </div>
-            <div class="col-sm-6" style="margin-top:80px">
-            <p>
-                <i>Quiet Time</i> is a beautiful 37' Sea Ray motor yacht that is a joy to cruise.
-                She has ample of space inside and out and boats powerful
-                engines to get you to your destination quickly and in comfort.
-                The boat is fully air conditioned and has a roomy toilet with shower.
-                A cockpit shower is available to freshen up after swimming.
-                <br>
-                <br>
-                List of features: BBQ, generator, A/C, showers, bathroom, TV/DVD, bow sunpads
-            </p>
-            </div>
-        </div>
-        <hr>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4" style="margin-top:40px">
-                <h3 style="color:#1b6d85">Quiet time</h3>
-                <img class="img-responsive thumbnail" src="images/boat3.jpg" width="300px" height="400px">
-            </div>
-            <div class="col-sm-6" style="margin-top:80px">
+    <div id = "yachts">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4" style="margin-top:40px">
+                    <h3 style="color:#1b6d85">Quiet time</h3>
+                    <img class="img-responsive thumbnail" src="images/boat2.jpg" width="300px" height="400px">
+                </div>
+                <div class="col-sm-6" style="margin-top:80px">
                 <p>
-                    This little battlewagon is great for inshore and near-shore fishing, although we've been known to
-                    go offshore for tuna on it, too. This sturdy 20' Mako center console is
-                    available for rental as well as guided fishing and lobstering charters.
+                    <i>Quiet Time</i> is a beautiful 37' Sea Ray motor yacht that is a joy to cruise.
+                    She has ample of space inside and out and boats powerful
+                    engines to get you to your destination quickly and in comfort.
+                    The boat is fully air conditioned and has a roomy toilet with shower.
+                    A cockpit shower is available to freshen up after swimming.
+                    <br>
+                    <br>
+                    List of features: BBQ, generator, A/C, showers, bathroom, TV/DVD, bow sunpads
                 </p>
+                </div>
             </div>
+        <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4" style="margin-top:40px">
+                    <h3 style="color:#1b6d85">Mako</h3>
+                    <img class="img-responsive thumbnail" src="images/boat3.jpg" width="300px" height="400px">
+                </div>
+                <div class="col-sm-6" style="margin-top:80px">
+                    <p>
+                        This little battlewagon is great for inshore and near-shore fishing, although we've been known to
+                        go offshore for tuna on it, too. This sturdy 20' Mako center console is
+                        available for rental as well as guided fishing and lobstering charters.
+                    </p>
+                </div>
+            </div>
+            {{#if resObject}}
+                <hr>
+            {{/if}}
         </div>
     </div>
     </body>
-    <hr>
-    <footer>
-        <div class="text-center">
-            <p>&copy; 2018 Tupkalenko R.</p>
-        </div>
-    </footer>
 </html>
+<script>
+    ( function addYachts() {
+
+
+        {{#each resObject}}
+                var counter = 0;
+                var container = document.createElement("div");
+                container.className = "container";
+                var row = document.createElement("div");
+                row.className = "row";
+                var col = document.createElement("div");
+                col.className = "col-sm-4";
+                col.style = "margin-top:40px";
+                var node = document.createTextNode('{{Yacht_Name}}');
+                var h3 = document.createElement("h3");
+                h3.style = "color:#1b6d85";
+                h3.appendChild(node);
+                var img = document.createElement("IMG");
+                img.setAttribute("src", "images/x.png");
+                img.className = "img-responsive thumbnail";
+                img.setAttribute("width", "300");
+                img.setAttribute("height", "400");
+                col.appendChild(h3);
+                col.appendChild(img);
+                row.appendChild(col);
+                var col2 = document.createElement("div");
+                col2.className = "col-sm-6";
+                col2.style = "margin-top:80px";
+                var p = document.createElement("P");
+                var node2 = document.createTextNode('{{Descr}}');
+                p.appendChild(node2);
+                col2.appendChild(p);
+                row.appendChild(col2);
+                container.appendChild(row);
+                var element = document.getElementById("yachts");
+                var hr = document.createElement("hr");
+                container.appendChild(hr);
+                element.appendChild(container);
+        {{/each}}
+    })()
+</script>

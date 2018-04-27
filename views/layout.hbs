@@ -1,13 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blog Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="stylesheets\css\bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="stylesheets\index.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <title> {{title}}</title>
 </head>
 <body>
-{{{ body}}}
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="color:#1b6d85">BoatVentures(Tupkalenko)</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><p class="navbar-text" style="font-size:10pt">800-555-5555</p></li>
+                <li><a href="https://www.facebook.com/pages/BoatVentures/492032200952350" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=kakutot27@gmail.com" target="_blank"><i class="fa fa-google"></i> </a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+<!--Another navbar-->
+<div class="container">
+    <nav>
+        <ul class="nav nav-pills pull-left">
+            <li role="presentation" style="padding:4px 7px;">
+                <a href="/" style="padding-bottom: 8px">HOME</a></li>
+            <li role="presentation" style="padding:4px 7px;">
+                <a href="/yachts" style="padding-bottom: 8px">YACHTS</a></li>
+            <li role="presentation" style="padding:4px 7px;">
+                <a href="/reservations" style="padding-bottom: 8px">RESERVATIONS</a></li>
+            <li role="presentation" style="padding:4px 7px;">
+                <a href="/blog" style="padding-bottom: 8px">BLOG</a></li>
+        </ul>
+        <ul class="nav nav-pills pull-right">
+
+        {{#if user}}
+                <li role="presentation" style="padding:4px 7px;">
+                    <a href="/users/logout" style="padding-bottom: 8px">LOGOUT</a></li>
+                <li role="presentation" style="padding:4px 7px;margin-top: 8px">
+                    <p class="text-danger"> LOGED AS:   {{user.username}}</p>
+                 </li>
+                 {{else}}
+                    <li role="presentation" style="padding:4px 7px;">
+                        <a href="/users/login" style="padding-bottom: 8px">LOGIN</a></li>
+                    <li role="presentation" style="padding:4px 7px;">
+                        <a href="/users/register" style="padding-bottom: 8px">REGISTER</a></li>
+            {{/if}}
+        </ul>
+    </nav>
+
+</div>
+        <div class="row">
+            <div class="col-lg-12">
+                {{#if success_msg}}
+                    <div class="alert alert-success text-center">{{success_msg}}</div>
+                {{/if}}
+
+                {{#if error_msg}}
+                    <div class="alert alert-danger text-center">{{error_msg}}</div>
+                {{/if}}
+
+                {{#if error}}
+                    <div class="alert alert-danger text-center">{{error}}</div>
+                {{/if}}
+                {{{body}}}
+            </div>
+        </div>
+<div class = "container">
+    <hr>
+    <footer >
+        <div class="text-center">
+            <p>&copy; 2018 Tupkalenko R.</p>
+        </div>
+    </footer>
+</div>
+
 </body>
+
 </html>

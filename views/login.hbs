@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blog Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link href="\stylesheets\css\bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="\stylesheets\index.css" rel="stylesheet">
+    <link href="\stylesheets\blog.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="row">
+
+    <div class="center-block" style="width:400px;">
+        <h2 class="page-header">Account Login</h2>
+        <form action="/users/login" method ="post">
+            <div class="form-group">
+                <label for="login">Login</label>
+                <input type="Login" class="form-control" name="username"  aria-describedby="username" placeholder="Enter login">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>
